@@ -1,0 +1,10 @@
+---
+- name: FirstPlayBook
+  hosts: all
+  tasks:
+  - name: YUM Update
+    yum:
+      name: '*'
+      state: latest
+...
+
