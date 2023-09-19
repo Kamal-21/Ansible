@@ -1,0 +1,9 @@
+- name: FileCopy
+  hosts: web
+  tasks:
+    - name: Copy file from machine
+      copy:
+        src: /home/ansible/Ansible1.0/copy/index.html
+        dest: /var/www/html/
+        backup: yes
+...
