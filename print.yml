@@ -1,0 +1,23 @@
+---
+- name: Printing
+  hosts: web
+  vars:
+    - name: Kamal
+    - age: 21
+    - Email: kamalkomalan21@gmail.com
+    
+  tasks:
+    - name: Details
+      debug:
+        msg: 
+          - My name is {{ name }}
+          - My age is {{ age }}
+          - Mail me on {{ Email }} for further information
+      register: result
+
+    - name: Store to another Variable
+      debug:
+        var: result
+           
+
+... 

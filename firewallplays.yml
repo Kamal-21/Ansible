@@ -1,0 +1,29 @@
+---
+- name: add to firewall
+  hosts: web
+  become: yes
+  tasks:
+    - name: Adding to firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+    - name: Reloading
+      command: firewall-cmd --reload
+  tags:
+    - play1
+
+- name: Remove from firewall
+  hosts: web
+  become: yes
+  tasks:
+    - name: Removing from firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: disabled
+    - name: Reloading
+      command: firewall-cmd --reload
+  tags:
+    - play2
+...

@@ -1,0 +1,14 @@
+---
+- name: Install MARIADB
+  hosts: db
+  tasks:
+    - name: MARIADB Installation
+      yum:
+        name: mariadb-server
+        state: latest
+    - name: Enable mariadb
+      service:
+        name: mariadb
+        state: started
+        enabled: true
+...
