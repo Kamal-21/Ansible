@@ -1,0 +1,16 @@
+---
+- name: Uninstall Apache
+  hosts: all
+  tasks:
+    - name: Uninstalling...
+      yum:
+        name: httpd
+        state: absent
+      when: ansible_distribution == 'AlmaLinux'
+
+    - name: apache2 Uninstall
+      apt:
+        name: apache2
+        state: absent
+      when: ansible_distribution == 'Linux Mint'
+...
