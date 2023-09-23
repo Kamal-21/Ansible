@@ -1,0 +1,15 @@
+---
+- name: User
+  hosts: all
+  tasks:
+    - name: ADDING
+      user:
+        name: "{{uname}}"
+        comment: "{{comment}}"
+      register: userinfo
+    - debug:
+        msg:
+          - userinfo.name
+          - userinfo.comment
+...
+        
