@@ -1,0 +1,12 @@
+---
+- name: Filtering and adding new user to a  client
+  hosts: all
+  #variables of name and comment are stored in group_vars/all
+  tasks:
+    - name: Adding..
+      user:
+        name: "{{uname}}"
+        comment: "{{comment}}"
+      when: ansible_default_ipv4.address == '172.16.21.2'
+...
+      
