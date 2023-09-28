@@ -1,0 +1,13 @@
+---
+- name: Facts
+  hosts: client3
+  tasks:
+    - name: debug
+      debug:
+        var: ansible_default_ipv4.interface
+
+
+    - name: debug1
+      debug:
+        var: ansible_hostname
+...
